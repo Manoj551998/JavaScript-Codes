@@ -1,0 +1,18 @@
+//Promises 
+function demoPromise()
+{
+	return new Promise((resolve,reject)=>{
+	let a=2+1;
+	if(a==2)
+	{
+		resolve("success");
+	}
+	else
+	{
+		reject("error");
+	}
+	})
+
+}
+demoPromise().then((message)=>{console.log("success message: "+message)})
+	.catch((message)=>{console.log("errormessage: "+message)})
