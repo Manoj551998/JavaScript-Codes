@@ -1,0 +1,37 @@
+/*
+	-> This is a call back function
+	-> line 26 is calling the function of line no7 with 2 parameters(success and error)
+  -> here in line no7 created a bopolean varaiable 
+  -> In if condition 'true' means it will call the success function of called function "This is the call back function"
+  	 then the call of arrow function is made by the callback function in line no 15
+	->
+*/
+one=true;
+two=true;//ignore this 
+function myfun(success,error)
+{
+	if(one)
+  { 
+  success(
+  {
+  name:"Success callback",
+  message:":)"
+  })
+  }
+  else
+  {
+  	error({
+  name:'This is callback of error'
+  });
+  }
+
+}
+
+myfun((success)=>{
+console.log("success completed: "+success.name,success.message);
+},(error)=>{
+console.log("error failed:"+error.name,error.message);
+})
+
+
+
